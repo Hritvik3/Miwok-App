@@ -10,12 +10,20 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class WordAdapter extends ArrayAdapter<Word> {
-    public WordAdapter(@NonNull Context context, @NonNull List<Word> objects) {
+
+    // resource id for the background color for this list of words
+    private  int mColorResourceId;
+
+
+    public WordAdapter(@NonNull Context context, @NonNull ArrayList<Word> objects, int colorResourceId) {
         super(context, 0, objects);
+        mColorResourceId = colorResourceId;
     }
 
     @NonNull
@@ -44,6 +52,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
             iconView.setVisibility(View.GONE);
         }
 
+
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        textContainer.setBackgroundColor(color);
 
 
         return listItemView;
