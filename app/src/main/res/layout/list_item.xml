@@ -13,16 +13,17 @@
         android:id="@+id/image"
          />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/image">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/image"
-        android:layout_alignParentTop="true"
-        android:id="@+id/text_container"
+       android:id="@+id/text_container"
         android:paddingLeft="16dp">
     <TextView
         android:id="@+id/mainText"
@@ -44,16 +45,18 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/white"
         tools:text="one"/>
+
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/text_container"
-        android:id="@+id/play_icon"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/ic_baseline_play_arrow_24"/>
+        <ImageView
+            android:id="@+id/play_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_baseline_play_arrow_24" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
